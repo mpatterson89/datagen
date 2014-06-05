@@ -1,0 +1,64 @@
+#:kivy 1.0
+
+<MainMenu>
+	canvas:
+		Rectangle:
+	    	source: '/home/mpatterson/Dev/kivy_stuff/DataGen/green_gradient3.png'
+	    	size: self.size
+	    	pos: self.pos
+	BoxLayout:
+		
+		orientation: 'vertical'
+		Label:
+			size_hint: 1,.2
+			text: 'Main Menu'
+		BoxLayout:
+			size_hint: 1, .5
+			Label:
+				text: ""
+			Button:
+				background_color: (.3, 1, 1, .2)
+				size_hint: 1, .4
+				text: 'Task Table Gen'
+				on_press: root.manager.current = 'task'
+			Label:
+				text: ""
+		
+		BoxLayout:
+			orientation: 'vertical'
+			size_hint: 1, .8
+
+			Label:
+				size_hint: .5, .1
+				text: ""
+			BoxLayout:
+				Label:
+					size_hint: 1, .2
+					text: ""
+				Button:
+					background_color: (.3, 1, 1, .2)
+					text: 'Transport Collection Gen'
+				Label:
+					size_hint: 1, .2
+					text: ""
+			
+			Label:
+				size_hint: .2, .1
+				text: ""
+			BoxLayout:
+				Label:
+					text: ""	
+				Button:
+					background_color: (.3, 1, 1, .2)
+					text: 'Bryan\'s DBTIME'
+				Label:
+					text: ""
+			Label:
+				size_hint: 1, 2
+				text: ""
+
+
+
+
+    
+       

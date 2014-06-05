@@ -1,0 +1,17 @@
+#:kivy 1.0
+
+<StartEndDate>:
+	canvas:
+		Rectangle:
+	    	source: '/home/mpatterson/Dev/kivy_stuff/DataGen/green_gradient2.jpg'
+	    	size: self.size
+	    	pos: self.pos
+    BoxLayout:
+    	DatetimePicker:
+    		size_hint: 1,.5
+    	Button:
+    		size_hint: .5,.5
+    		background_color: (.3, 1, 1, .2)
+    		text: "Apply"
+    		on_press: root.manager.current = 'task'
+

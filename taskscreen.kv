@@ -1,0 +1,185 @@
+#:kivy 1.0
+
+<TaskScreen>:
+	FloatLayout:
+		canvas:
+			Rectangle:
+		    	source: '/home/mpatterson/Dev/kivy_stuff/DataGen/green_gradient4.jpg'
+		    	size: self.size
+		    	pos: self.pos
+	    BoxLayout:
+	    	orientation: 'vertical'
+	    	
+	    	Label:
+	    		size_hint_y: .2
+	    		text: "Tasks Data"
+	    	BoxLayout:
+	    		size_hint: 1.2, .5
+	    	    Label:
+	    	    	size_hint: .4,1
+	    			text: "Type"
+	    		BoxLayout:
+	    			canvas:
+	        			Color:
+	            			rgba: .2, .2, .2, .5
+	        			Rectangle:
+	            			pos: self.pos
+	            			size: self.size 
+	    			orientation: 'horizontal'
+	    			BoxLayout:
+	    				orientation: 'vertical'
+	    				Label:
+	    					text: "Evs"
+	        			CheckBox:
+	        				group: 'type'
+	        		BoxLayout:
+	        			orientation: 'vertical'
+	        			Label:
+	    					text: "Transport"
+	        			CheckBox:
+	        				group: 'type'
+	        				
+	        		BoxLayout:
+	        			orientation: 'vertical'
+	        			Label:
+	    					text: "Generic"
+	        			CheckBox:
+	        				group: 'type'
+	        	Label:
+	        		size_hint: .5,.5
+	        		text: ""
+	        	BoxLayout:
+	        		orientation: 'vertical'	
+	        		Label:
+	        			size_hint: 1,.1
+	    				text: "Number of Tasks"
+	    			BoxLayout:
+		    			Slider:
+		    				size_hint: 2,1
+		    				id: s1
+		    				min: 1
+		    				max: 101
+		    				value: 1
+		    			Label:
+		    				size_int: .1,1
+		    				text:  '%s' % int(s1.value)
+	    		Label:
+	    			text: ""
+	    	BoxLayout:
+	    		size_hint: 1, .5
+	    		
+	    		BoxLayout:
+	    			padding: 20
+	    			Label:
+
+	    				size_hint: 1,.5
+	    				text: "Date Range"
+	    			BoxLayout:
+	    				Button:
+	    					background_color: (.3, 1, 1, .3)
+	    					size_hint: 1,.5
+	    					text: "Start Date"
+	    					on_press: root.manager.current = 'sed'
+	    			BoxLayout:
+	    				Button:
+	    					background_color: (.3, 1, 1, .3)
+	    					size_hint: 1, .5
+	    					text: "End Date"
+	    					on_press: root.manager.current = 'sed'
+	    		BoxLayout:
+	    			orientation: 'vertical'		
+	    			Label:
+	    				size_hint: 1, 1
+	    				text: 'Duration(min)'	
+	    			BoxLayout:	
+	        			Label:
+	    					text: "Min"
+	    				Slider:
+	    					id: sMin
+	    					min: 1
+	    					max: 101
+	    					value: 1
+	    				Label:
+	    					text:  '%s' % int(sMin.value)
+	    			BoxLayout:	
+	        			Label:
+	    					text: "Max"
+	    				Slider:
+	    					id: sMax
+	    					min: 1
+	    					max: 101
+	    					value: 1
+	    				Label:
+	    					text:  '%s' % int(sMax.value)
+	    	BoxLayout:
+	    		Label:
+	    			size_hint: 0, .1
+	    			text: ''
+	    		BoxLayout:
+	    			orientation: 'vertical'
+	    			BoxLayout:
+	    				size_hint: 1, .5
+	    				canvas:
+		        			Color:
+		            			rgba: .2, .2, .2, .5
+		        			Rectangle:
+		            			pos: self.pos
+		            			size: self.size
+		    			Label:
+		    				text: 'Random State'
+			    		Switch:
+			    			background_color: (.3, 1, 1, .3)
+			    			text: 'Random State'
+		    		BoxLayout:
+		    			canvas:
+		        			Color:
+		            			rgba: .2, .2, .2, .5
+		        			Rectangle:
+		            			pos: self.pos
+		            			size: self.size 
+		    			orientation: 'horizontal'
+		    			BoxLayout:
+		    				orientation: 'vertical'
+		    				Label:
+		    					text: "Complete"
+		        			CheckBox:
+		        				group: 'state'
+		        		BoxLayout:
+		        			orientation: 'vertical'
+		        			Label:
+		    					text: "Started"
+		        			CheckBox:
+		        				group: 'state'
+		        				
+		        		BoxLayout:
+		        			orientation: 'vertical'
+		        			Label:
+		    					text: "Paused"
+		        			CheckBox:
+		        				group: 'state'
+		        		BoxLayout:
+		    				orientation: 'vertical'
+		    				Label:
+		    					text: "Waiting"
+		        			CheckBox:
+		        				group: 'state'
+		        		BoxLayout:
+		    				orientation: 'vertical'
+		    				Label:
+		    					text: "Canceled"
+		        			CheckBox:
+		        				group: 'state'
+	    		BoxLayout:
+	    			size_hint: 1,1
+	    			
+	    			Button:
+	    				background_color: (.3, 1, 1, .3)
+	    				text: 'Apply'
+	    				on_press: root.manager.current = 'menu'
+	    			Label:
+	    				size_hint: .5,1
+	    				text: ''
+
+
+	    	
+

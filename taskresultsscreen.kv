@@ -1,0 +1,77 @@
+#:kivy 1.0
+
+<TaskResultsScreen>:
+	FloatLayout:
+		id: body
+		canvas:
+			Rectangle:
+		    	source: '/home/mpatterson/Dev/kivy_stuff/DataGen/green_gradient4.jpg'
+		    	size: self.size
+		    	pos: self.pos
+##GUI ELEMENT STATES
+	##state_status 		= []
+	##type_status  		= []
+	##priority_status	 	= []
+	##slider_status		= []
+	##users_list			= []
+	##date_status			= []
+	##random_state_switch = False
+
+		Label:
+			id: state_status 
+			text: ''
+			pos: 0,250
+		Label:
+			id: type_status 
+			text: ''
+			pos: 0,225
+		Label:
+			id: task_amount 
+			text: ''
+			pos: 0,200
+		Label:
+			id: min_duration 
+			text: ''
+			pos: 0,175
+		Label:
+			id: max_duration 
+			text: ''
+			pos: 0,150
+		Label:
+			id: start_date 
+			text: ''
+			pos: 0,125
+		Label:
+			id: end_date 
+			text: ''
+			pos: 0,100
+		Label:
+			id: priorities 
+			text: ''
+			pos: 0,75
+		Label:
+			id: users 
+			text: ''
+			pos: 0,50
+		
+		Label:
+			id: submission 
+			text: ''
+			pos: 0,-50
+			text: 'Is the above information correct? if so [Submit].'
+
+		Button:
+			id: back_btn
+			text: 'Back'
+			background_color: (.3, 1, 1, .3)
+			size_hint: .1, .1
+			pos: 275,150
+			on_press: root.manager.current = 'task'
+		
+		Button:
+			id: back_btn
+			text: 'Submit'
+			background_color: (.3, 1, 1, .3)
+			size_hint: .1, .1
+			pos: 425,150
+			on_press: root.manager.current = 'task'

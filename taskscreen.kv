@@ -60,13 +60,13 @@
 	    			BoxLayout:
 		    			Slider:
 		    				size_hint: 2,1
-		    				id: s1
+		    				id: task_amount
 		    				min: 1
 		    				max: 101
 		    				value: 1
 		    			Label:
 		    				size_int: .1,1
-		    				text:  '%s' % int(s1.value)
+		    				text:  '%s' % int(task_amount.value)
 	    		Label:
 	    			text: ""
 	    	BoxLayout:
@@ -83,13 +83,13 @@
 	    					background_color: (.3, 1, 1, .3)
 	    					size_hint: 1,.5
 	    					text: "Start Date"
-	    					on_press: root.manager.current = 'sed'
+	    					on_press: root.isStartDate();root.manager.current = 'sed'
 	    			BoxLayout:
 	    				Button:
 	    					background_color: (.3, 1, 1, .3)
 	    					size_hint: 1, .5
 	    					text: "End Date"
-	    					on_press: root.manager.current = 'sed'
+	    					on_press: root.isEndDate();root.manager.current = 'sed'
 	    		BoxLayout:
 	    			orientation: 'vertical'		
 	    			Label:
@@ -166,7 +166,7 @@
 		    			Label:
 		    				text: 'Random State'
 			    		Switch:
-
+			    			id: random_state_switch
 			    			background_color: (.3, 1, 1, .3)
 			    			text: 'Random State'
 		    		BoxLayout:
@@ -223,7 +223,7 @@
     				pos: 600, 30
     				background_color: (.3, 1, 1, .3)
     				text: 'Apply'
-    				on_press: root.apply()##root.manager.current = 'menu'
+    				on_press: root.apply();root.manager.current = 'task_results'
     			BoxLayout:
     				orientation: 'vertical'
     				size_hint: .2, .3
@@ -231,6 +231,7 @@
     				Label:
     					text: "Users(Seperate by comma)"
     				TextInput:
+    					id: users
     					size_hint: 1,3
     					background_color: (.3, 1, 1, .3)
 

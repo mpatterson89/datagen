@@ -12,6 +12,7 @@ from taskscreen import TaskScreen
 from startenddate import StartEndDate
 from mainmenu import MainMenu	
 from settingsscreen import SettingsScreen
+from taskresultsscreen import TaskResultsScreen
 
 class DataGenApp(App):
 	#Window.fullscreen = True
@@ -19,19 +20,20 @@ class DataGenApp(App):
 	Config.set('graphics', 'width', '800')
 	Config.set('graphics', 'height', '600')
 	Config.write()
+	
 	def build(self):
-		sm = ScreenManager()
-		menu = MainMenu(name='menu')
-		sed = StartEndDate(name='sed')
-		#datepicker = DatePicker()
+		sm   		  = ScreenManager()
+		menu 		  = MainMenu(name='menu')
+		sed           = StartEndDate(name='sed')
 		settingscreen = SettingsScreen(name="settingscreen")
-		#settingscreen.add_widget(datepicker)
-		task = TaskScreen(name='task')
+		task 		  = TaskScreen(name='task')
+		task_results  = TaskResultsScreen(name='task_results')
 
 		sm.add_widget(menu)
 		sm.add_widget(task)
 		sm.add_widget(settingscreen)
 		sm.add_widget(sed)
+		sm.add_widget(task_results)
 		return sm
 
 if __name__ == '__main__':
